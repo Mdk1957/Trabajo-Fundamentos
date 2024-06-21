@@ -1,0 +1,19 @@
+archivo_entrada = 'tampocose.txt'
+
+archivo_salida = 'nose.txt'
+
+with open(archivo_entrada, 'r') as archivo:
+    contenido = archivo.read()
+
+num_letras = sum(c.isalpha() for c in contenido)
+num_espacios = sum(c.isspace() for c in contenido)
+
+resumen = f"El archivo '{archivo_entrada}' contiene:\n"
+resumen += f"- Letras: {num_letras}\n"
+resumen += f"- Espacios: {num_espacios}\n"
+
+
+with open(archivo_salida, 'w') as archivo:
+    archivo.write(resumen)
+
+print(f"Resumen guardado en '{archivo_salida}'")
